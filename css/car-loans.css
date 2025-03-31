@@ -9406,7 +9406,7 @@ figcaption {
 }
 
 .nav-content {
-  grid-column-gap: 16px;
+  grid-column-gap: 48px;
   grid-row-gap: 16px;
   grid-template-rows: auto;
   grid-template-columns: auto auto;
