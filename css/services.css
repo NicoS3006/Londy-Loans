@@ -4185,7 +4185,7 @@ textarea.w-select {
 
 .w-checkbox-input--inputType-custom.w--redirected-checked {
   background-color: #3898ec;
-  background-image: url('../Londy-Loans/images/ziT8rLFgtljU.svg');
+  background-image: url('.../images/ziT8rLFgtljU.svg');
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7139,7 +7139,7 @@ figcaption {
   background-color: var(
     --components--input-text--background-color--bg-tertiary
   );
-  background-image: url('../Londy-Loans/images/Jr5Nrc20Mo7w.svg');
+  background-image: url('.../images/Jr5Nrc20Mo7w.svg');
 }
 
 .checkbox.w--redirected-focus {
@@ -16443,44 +16443,42 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/services-fonts/OLYSr6A4yjWc.woff2')
-    format('woff2');
+  src: url('./fonts/services-fonts/OLYSr6A4yjWc.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/services-fonts/xkkS0KkSo4DD.woff2')
-    format('woff2');
+  src: url('./fonts/services-fonts/xkkS0KkSo4DD.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('/Londy-Loans/fonts/services-fonts/HxkhAOqhroPX.woff') format('woff');
+  src: url('./fonts/services-fonts/HxkhAOqhroPX.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('/Londy-Loans/fonts/services-fonts/Aa3eSqGnDarl.woff') format('woff');
+  src: url('./fonts/services-fonts/Aa3eSqGnDarl.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('/Londy-Loans/fonts/services-fonts/OWsvYCYJ5qbT.woff') format('woff');
+  src: url('./fonts/services-fonts/OWsvYCYJ5qbT.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('/Londy-Loans/fonts/services-fonts/tKuqCvPdvvX6.woff') format('woff');
+  src: url('./fonts/services-fonts/tKuqCvPdvvX6.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

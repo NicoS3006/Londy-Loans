@@ -4185,7 +4185,7 @@ textarea.w-select {
 
 .w-checkbox-input--inputType-custom.w--redirected-checked {
   background-color: #3898ec;
-  background-image: url('../Londy-Loans/images/tXUqZcUi48vU.svg');
+  background-image: url('.../images/tXUqZcUi48vU.svg');
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7139,7 +7139,7 @@ figcaption {
   background-color: var(
     --components--input-text--background-color--bg-tertiary
   );
-  background-image: url('../Londy-Loans/images/W2QqDuWi9YkE.svg');
+  background-image: url('.../images/W2QqDuWi9YkE.svg');
 }
 
 .checkbox.w--redirected-focus {
@@ -16460,48 +16460,42 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/loan-calculator-fonts/D6SNoyIQI7b3.woff2')
-    format('woff2');
+  src: url('./fonts/loan-calculator-fonts/D6SNoyIQI7b3.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/loan-calculator-fonts/EIRNh7o6Jz97.woff2')
-    format('woff2');
+  src: url('./fonts/loan-calculator-fonts/EIRNh7o6Jz97.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('/Londy-Loans/fonts/loan-calculator-fonts/cGPvYmYvmzmZ.woff')
-    format('woff');
+  src: url('./fonts/loan-calculator-fonts/cGPvYmYvmzmZ.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('/Londy-Loans/fonts/loan-calculator-fonts/UQqhdy7qwPIX.woff')
-    format('woff');
+  src: url('./fonts/loan-calculator-fonts/UQqhdy7qwPIX.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('/Londy-Loans/fonts/loan-calculator-fonts/UXucB7Ot1i9M.woff')
-    format('woff');
+  src: url('./fonts/loan-calculator-fonts/UXucB7Ot1i9M.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('/Londy-Loans/fonts/loan-calculator-fonts/lPFB9IQlXEpC.woff')
-    format('woff');
+  src: url('./fonts/loan-calculator-fonts/lPFB9IQlXEpC.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
