@@ -5428,7 +5428,7 @@ figcaption {
 
 .card.dropdown-pd {
   padding: var(--components--cards--paddings--pd-medium);
-  width: 200px;
+  width: 250px;
 }
 
 .card.whats-included {
@@ -9421,6 +9421,7 @@ figcaption {
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
+  width: 20vw !important;
 }
 
 .nav-menu-list-item {
@@ -16454,42 +16455,48 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/car-loans-fonts/dfD6IpfDuw2e.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/car-loans-fonts/dfD6IpfDuw2e.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/car-loans-fonts/VqRjQ12WkBZk.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/car-loans-fonts/VqRjQ12WkBZk.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('/Londy-Loans/fonts/car-loans-fonts/dbrfSVRVSuH3.woff') format('woff');
+  src: url('/Londy-Loans/fonts/car-loans-fonts/dbrfSVRVSuH3.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('/Londy-Loans/fonts/car-loans-fonts/YHTJdIrZ5qQq.woff') format('woff');
+  src: url('/Londy-Loans/fonts/car-loans-fonts/YHTJdIrZ5qQq.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('/Londy-Loans/fonts/car-loans-fonts/cPjKTliSs8AD.woff') format('woff');
+  src: url('/Londy-Loans/fonts/car-loans-fonts/cPjKTliSs8AD.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('/Londy-Loans/fonts/car-loans-fonts/evBtRscYt2eQ.woff') format('woff');
+  src: url('/Londy-Loans/fonts/car-loans-fonts/evBtRscYt2eQ.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

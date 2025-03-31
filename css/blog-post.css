@@ -5428,7 +5428,7 @@ figcaption {
 
 .card.dropdown-pd {
   padding: var(--components--cards--paddings--pd-medium);
-  width: 200px;
+  width: 250px;
 }
 
 .card.whats-included {
@@ -9421,6 +9421,7 @@ figcaption {
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
+  width: 20vw !important;
 }
 
 .nav-menu-list-item {
@@ -16436,42 +16437,48 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/blog-post-fonts/5EX1kmbM3JMe.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/blog-post-fonts/5EX1kmbM3JMe.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/blog-post-fonts/vK2nPqUMBqHX.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/blog-post-fonts/vK2nPqUMBqHX.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('/Londy-Loans/fonts/blog-post-fonts/6dgwcGz5Wi1G.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-post-fonts/6dgwcGz5Wi1G.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('/Londy-Loans/fonts/blog-post-fonts/n8DtERlga0Vv.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-post-fonts/n8DtERlga0Vv.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('/Londy-Loans/fonts/blog-post-fonts/UDW4UHMZt6sj.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-post-fonts/UDW4UHMZt6sj.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('/Londy-Loans/fonts/blog-post-fonts/ndpfnmh3VoBf.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-post-fonts/ndpfnmh3VoBf.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

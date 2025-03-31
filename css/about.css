@@ -5428,7 +5428,7 @@ figcaption {
 
 .card.dropdown-pd {
   padding: var(--components--cards--paddings--pd-medium);
-  width: 200px;
+  width: 250px;
 }
 
 .card.whats-included {
@@ -9421,6 +9421,7 @@ figcaption {
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
+  width: 20vw !important;
 }
 
 .nav-menu-list-item {
@@ -10793,7 +10794,6 @@ figcaption {
   position: absolute;
   inset: -20px -20px auto auto;
 }
-
 
 .more-templates-lottie-2 {
   z-index: 9999;
@@ -14831,7 +14831,6 @@ figcaption {
   .more-templates-lottie {
     width: 40px;
   }
-
 
   .more-templates-lottie-2 {
     width: 40px;

@@ -5473,7 +5473,7 @@ figcaption {
 
 .card.dropdown-pd {
   padding: 25px 32px 10px 32px;
-  width: 200px;
+  width: 250px;
 }
 
 .card.whats-included {
@@ -9466,6 +9466,7 @@ figcaption {
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
+  width: 20vw !important;
 }
 
 .nav-menu-list-item {

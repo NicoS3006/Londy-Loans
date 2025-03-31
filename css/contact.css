@@ -5428,7 +5428,7 @@ figcaption {
 
 .card.dropdown-pd {
   padding: var(--components--cards--paddings--pd-medium);
-  width: 200px;
+  width: 250px;
 }
 
 .card.whats-included {
@@ -9421,6 +9421,7 @@ figcaption {
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
+  width: 20vw !important;
 }
 
 .nav-menu-list-item {
@@ -16436,14 +16437,16 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/contact-fonts/TGwrqmJ5vHVH.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/contact-fonts/TGwrqmJ5vHVH.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('/Londy-Loans/fonts/contact-fonts/6zdVUrN4m1Rn.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/contact-fonts/6zdVUrN4m1Rn.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
