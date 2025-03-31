@@ -3576,7 +3576,7 @@ textarea.w-input, textarea.w-select {
 
 .w-checkbox-input--inputType-custom.w--redirected-checked {
   background-color: #3898ec;
-  background-image: url("../images/NRMJFLYrfPM8.svg");
+  background-image: url("../Londy-Loans/images/NRMJFLYrfPM8.svg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6436,7 +6436,7 @@ figcaption {
 .checkbox.w--redirected-checked {
   border-color: var(--components--input-text--border-color--br-tertiary);
   background-color: var(--components--input-text--background-color--bg-tertiary);
-  background-image: url("../images/BTk0lS1KDxs5.svg");
+  background-image: url("../Londy-Loans/images/BTk0lS1KDxs5.svg");
 }
 
 .checkbox.w--redirected-focus {
@@ -14601,42 +14601,42 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('/fonts/blog-fonts/vJTCMSBE9BnE.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/blog-fonts/vJTCMSBE9BnE.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('/fonts/blog-fonts/IIwXb7sTWYp7.woff2') format('woff2');
+  src: url('/Londy-Loans/fonts/blog-fonts/IIwXb7sTWYp7.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('/fonts/blog-fonts/okF1QwkwNDlj.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-fonts/okF1QwkwNDlj.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('/fonts/blog-fonts/FH62yDPs6Aq4.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-fonts/FH62yDPs6Aq4.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('/fonts/blog-fonts/Fr6w68hwPJmR.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-fonts/Fr6w68hwPJmR.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('/fonts/blog-fonts/x77t5Asw284R.woff') format('woff');
+  src: url('/Londy-Loans/fonts/blog-fonts/x77t5Asw284R.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
