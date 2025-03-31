@@ -9417,12 +9417,18 @@ figcaption {
   display: grid;
 }
 
-.nav-menu-list-wrapper {
+.nav-menu-list-wrapper-header {
   margin-bottom: 0;
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
   width: 20vw !important;
+}
+.nav-menu-list-wrapper {
+  margin-bottom: 0;
+  margin-right: 0;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 .nav-menu-list-item {
