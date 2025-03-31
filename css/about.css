@@ -5429,6 +5429,7 @@ figcaption {
 .card.dropdown-pd {
   padding: var(--components--cards--paddings--pd-medium);
   width: 250px;
+  height: 250px;
 }
 
 .card.whats-included {
