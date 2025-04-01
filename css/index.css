@@ -16489,42 +16489,42 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('./fonts/index-fonts/K7ysRTeHWPNJ.woff2') format('woff2');
+  src: url('fonts/index-fonts/K7ysRTeHWPNJ.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('./fonts/index-fonts/NHGQL4alkUPF.woff2') format('woff2');
+  src: url('fonts/index-fonts/NHGQL4alkUPF.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('./fonts/index-fonts/xzdmWPduPbOZ.woff') format('woff');
+  src: url('fonts/index-fonts/xzdmWPduPbOZ.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('./fonts/index-fonts/LbzYRUiQ7x4H.woff') format('woff');
+  src: url('fonts/index-fonts/LbzYRUiQ7x4H.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('./fonts/index-fonts/TSlad5CUsdDk.woff') format('woff');
+  src: url('fonts/index-fonts/TSlad5CUsdDk.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('./fonts/index-fonts/DXXso4iHSmMW.woff') format('woff');
+  src: url('fonts/index-fonts/DXXso4iHSmMW.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
