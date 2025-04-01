@@ -16503,7 +16503,7 @@ figcaption {
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('fonts/index-fonts/xzdmWPduPbOZ.woff') format('woff');
+  src: url('/fonts/index-fonts/xzdmWPduPbOZ.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
