@@ -5493,6 +5493,7 @@ figcaption {
   transition: transform 0.3s, color 0.3s;
   position: relative;
   overflow: hidden;
+  border-left-width: 1px !important;
 }
 
 .card.post-card-v1:hover {
@@ -16528,4 +16529,8 @@ figcaption {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
