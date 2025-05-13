@@ -3,6 +3,7 @@ const loanTermButtons = document.querySelectorAll(".loan-term button");
 const repaymentTabs = document.querySelectorAll(".repayment-tabs button");
 const interestSlider = document.getElementById("interest-slider");
 const loanTypeButtons = document.querySelectorAll(".loan-type button");
+const loanPurposeSelect = document.getElementById("loan-purpose");
 
 const repaymentValue = document.getElementById("repayment-value");
 const repaymentFrequency = document.getElementById("repayment-frequency");
@@ -12,14 +13,13 @@ const interestRateDisplay = document.getElementById("interest-rate");
 
 let loanAmount = parseFloat(loanAmountInput.value);
 let loanTerm = 2; // Default to 2 years
-let interestRate = 16; // Default to Fixed Rate Loan (16%)
+let interestRate = 8; // Default to 8% for all purposes
 let frequency = "weekly"; // Default frequency
 
 function calculateRepayments() {
   const annualRate = interestRate / 100;
   let paymentsPerYear;
 
-  // Determine the number of payments per year based on frequency
   if (frequency === "weekly") {
     paymentsPerYear = 52;
   } else if (frequency === "fortnightly") {
@@ -31,13 +31,11 @@ function calculateRepayments() {
   const totalPayments = loanTerm * paymentsPerYear;
   const periodicRate = annualRate / paymentsPerYear;
 
-  // Calculate repayment amount using the annuity formula
   const repayment = (loanAmount * periodicRate) / (1 - Math.pow(1 + periodicRate, -totalPayments));
 
   const totalRepayment = repayment * totalPayments;
   const totalInterestPaid = totalRepayment - loanAmount;
 
-  // Update the UI with the calculated values, rounded to the nearest whole number
   repaymentValue.textContent = Math.round(repayment);
   totalInterest.textContent = Math.round(totalInterestPaid);
   totalRepayments.textContent = Math.round(totalRepayment);
@@ -47,42 +45,40 @@ function updateSliderBackground() {
   const value = interestSlider.value;
   const min = interestSlider.min;
   const max = interestSlider.max;
-
-  // Calculate the percentage of the slider that has been slid over
   const percentage = ((value - min) / (max - min)) * 100;
-
-  // Update the slider's background with a gradient
   interestSlider.style.background = `linear-gradient(to right, #a6fcc6 ${percentage}%, #fff ${percentage}%)`;
 }
 
 function updateInterestRate(newRate, minRange, maxRange) {
   interestRate = newRate;
-  interestSlider.min = minRange; // Update the slider's minimum value
-  interestSlider.max = maxRange; // Update the slider's maximum value
-  interestSlider.value = newRate; // Update the slider's position
-  interestRateDisplay.textContent = `${newRate.toFixed(2)}%`; // Update the displayed interest rate
-  updateSliderBackground(); // Update the slider's background
-  calculateRepayments(); // Recalculate repayments
+  interestSlider.min = minRange;
+  interestSlider.max = maxRange;
+  interestSlider.value = newRate;
+  interestRateDisplay.textContent = `${newRate.toFixed(2)}%`;
+  updateSliderBackground();
+  calculateRepayments();
 }
 
-// Add event listeners to loan type buttons
+// Handle loan type buttons
 loanTypeButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Remove the "active" class from all buttons
     loanTypeButtons.forEach((btn) => btn.classList.remove("active"));
-
-    // Add the "active" class to the clicked button
     button.classList.add("active");
 
-    // Update the interest rate and slider range based on the selected loan type
     if (button.textContent === "Fixed Rate Loan") {
-      updateInterestRate(16, 8, 20); // Fixed Rate Loan: 16%, range 8% to 20%
+      updateInterestRate(8, 5, 12); // Changed from 16 to 8
     } else if (button.textContent === "Variable Rate Loan") {
-      updateInterestRate(15, 8, 20); // Variable Rate Loan: 15%, range 8% to 20%
+      updateInterestRate(8, 5, 12); // Changed from 15 to 8
     } else if (button.textContent === "Secured Personal Loan") {
-      updateInterestRate(8.49, 6, 10.99); // Secured Personal Loan: 8.49%, range 6% to 10.99%
+      updateInterestRate(8, 5, 12); // Changed from 8.49 to 8
     }
   });
+});
+
+// Handle loan purpose dropdown (car, truck, ute, etc.)
+loanPurposeSelect.addEventListener("change", () => {
+  // Always reset to default 8% for all options
+  updateInterestRate(8, 5, 12);
 });
 
 loanAmountInput.addEventListener("input", (e) => {
@@ -113,15 +109,12 @@ interestSlider.addEventListener("input", (e) => {
   interestRate = parseFloat(e.target.value);
   interestRateDisplay.textContent = `${interestRate.toFixed(2)}%`;
   calculateRepayments();
-  updateSliderBackground(); // Update the slider's color
+  updateSliderBackground();
 });
 
-// Initialize the slider background and calculations on page load
+// Initialize
 updateSliderBackground();
 calculateRepayments();
-
-
-
 
 
 // Modal functionality
@@ -132,25 +125,24 @@ const okBtn = document.querySelector(".pop-up-ok-button");
 const body = document.body;
 
 loanInfoBtn.addEventListener("click", () => {
-  modal.style.display = "block"; // Show the modal
-  body.classList.add("no-scroll"); // Disable background scrolling
+  modal.style.display = "block";
+  body.classList.add("no-scroll");
 });
 
 closeBtn.addEventListener("click", () => {
-  modal.style.display = "none"; // Hide the modal
-  body.classList.remove("no-scroll"); // Enable background scrolling
+  modal.style.display = "none";
+  body.classList.remove("no-scroll");
 });
 
 okBtn.addEventListener("click", () => {
-  modal.style.display = "none"; // Hide the modal
-  body.classList.remove("no-scroll"); // Enable background scrolling
+  modal.style.display = "none";
+  body.classList.remove("no-scroll");
 });
-
 
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
-    modal.style.display = "none"; // Close modal if clicking outside content
-    body.classList.remove("no-scroll"); // Enable background scrolling
+    modal.style.display = "none";
+    body.classList.remove("no-scroll");
   }
 });
 
@@ -164,7 +156,6 @@ dropdowns.forEach((dropdown) => {
   btn.addEventListener("click", () => {
     const isActive = dropdown.classList.contains("active");
 
-    // Close all other dropdowns
     dropdowns.forEach((d) => {
       d.classList.remove("active");
       d.querySelector(".dropdown-content").style.height = "0";
@@ -172,15 +163,14 @@ dropdowns.forEach((dropdown) => {
 
     if (!isActive) {
       dropdown.classList.add("active");
-      content.style.height = `${content.scrollHeight}px`; // Smoothly expand to content height
+      content.style.height = `${content.scrollHeight}px`;
     } else {
       dropdown.classList.remove("active");
-      content.style.height = "0"; // Smoothly collapse
+      content.style.height = "0";
     }
   });
 });
 
-// Prevent modal scroll events from propagating to the background
 modal.addEventListener("wheel", (e) => {
   e.stopPropagation();
 });
