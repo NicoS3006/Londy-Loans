@@ -8176,7 +8176,7 @@ figcaption {
 }
 
 .section.cta {
-  background-color: var(--components--sections--backgrounds--bg-color-tertiary);
+  background-color: #a6fcc6;
   padding-top: 210px;
   padding-bottom: 210px;
 }
