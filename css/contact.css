@@ -5427,10 +5427,9 @@ figcaption {
 }
 
 .card.dropdown-pd {
-  padding: var(--components--cards--paddings--pd-medium);
+  padding: 25px 32px 10px 32px;
   width: 250px;
 }
-
 .card.whats-included {
   border-radius: var(--core--border-radius--br-size-3);
   box-shadow: 0 2px 4px 0 var(--core--box-shadow--bs-neutral-regular);

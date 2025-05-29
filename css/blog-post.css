@@ -5426,8 +5426,9 @@ figcaption {
   display: flex;
 }
 
+
 .card.dropdown-pd {
-  padding: var(--components--cards--paddings--pd-medium);
+  padding: 25px 32px 10px 32px;
   width: 250px;
 }
 
