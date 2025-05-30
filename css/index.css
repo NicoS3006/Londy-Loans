@@ -8183,11 +8183,11 @@ figcaption {
 
 .section.cta.cta-v1 {
   padding-top: 130px;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   overflow: hidden;
 }
 .logo-margin-top {
-  margin-top: 150px;
+  margin-top: 40px;
 }
 .section.cta.cta-v4 {
   padding-top: 188px;
@@ -11557,7 +11557,7 @@ figcaption {
   .section.cta.cta-v1,
   .section.cta.cta-v4 {
     padding-top: 140px;
-    padding-bottom: 140px;
+    padding-bottom: 60px;
   }
 
   .section.sales-home-hero,
@@ -12931,7 +12931,7 @@ figcaption {
 
   .section.cta.cta-v1 {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 20px;
   }
 
   .section.cta.cta-v4 {
