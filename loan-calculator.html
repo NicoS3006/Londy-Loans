@@ -268,17 +268,6 @@
               <label for="loan-type">The loan type I need is:</label>
               <div class="loan-type">
                 <button class="active">Fixed Rate Loan</button>
-                <button>Variable Rate Loan</button>
-                <button>Secured Personal Loan</button>
-              </div>
-              <div class="loan-hyperlink">
-                <button
-                  id="loan-info-btn"
-                  type="button"
-                  style="margin-top: 10px; color: #1175b5"
-                >
-                  Which loan is right for me?
-                </button>
               </div>
             </div>
 
@@ -543,112 +532,122 @@
               </div>
             </div>
           </div>
+          <div
+            class="calculator-rhs-wrapper"
+            style="
+              width: 50%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+            "
+          >
+            <div class="calculator-rhs">
+              <div class="repayment-tabs">
+                <button
+                  class="active repayment-buttons"
+                  data-frequency="weekly"
+                  style="margin: 3px"
+                >
+                  Weekly
+                </button>
+                <button
+                  data-frequency="fortnightly"
+                  class="repayment-buttons"
+                  style="margin: 3px"
+                >
+                  Fortnightly
+                </button>
+                <button
+                  data-frequency="monthly"
+                  class="repayment-buttons"
+                  style="margin: 3px"
+                >
+                  Monthly
+                </button>
+              </div>
+              <div class="padded-body" style="padding: 20px">
+                <div class="repayment-results">
+                  <h2>Your estimated repayments are</h2>
+                  <p class="repayment-amount">
+                    $<span id="repayment-value">110</span>
+                    <span id="repayment-frequency">Weekly</span>
+                  </p>
+                  <p>Over the life of the loan you could pay:</p>
+                  <ul>
+                    <li>
+                      Total interest:<span
+                        >$<span id="total-interest">1,309</span></span
+                      >
+                    </li>
+                    <li>
+                      Total repayments:
+                      <span>$<span id="total-repayments">11,309</span></span>
+                    </li>
+                  </ul>
+                  <p class="note">*Fees and charges excluded</p>
+                </div>
 
-          <div class="calculator-rhs">
-            <div class="repayment-tabs">
-              <button
-                class="active repayment-buttons"
-                data-frequency="weekly"
-                style="margin: 3px"
-              >
-                Weekly
-              </button>
-              <button
-                data-frequency="fortnightly"
-                class="repayment-buttons"
-                style="margin: 3px"
-              >
-                Fortnightly
-              </button>
-              <button
-                data-frequency="monthly"
-                class="repayment-buttons"
-                style="margin: 3px"
-              >
-                Monthly
-              </button>
+                <div class="interest-rate">
+                  <p>We've based this calculation on:</p>
+                  <p>Interest rate: <span id="interest-rate">8%</span> p.a.</p>
+                  <input
+                    type="range"
+                    id="interest-slider"
+                    min="5"
+                    max="12"
+                    step="0.1"
+                    value="8"
+                  />
+                </div>
+              </div>
             </div>
-            <div class="padded-body" style="padding: 20px">
-              <div class="repayment-results">
-                <h2>Your estimated repayments are</h2>
-                <p class="repayment-amount">
-                  $<span id="repayment-value">110</span>
-                  <span id="repayment-frequency">Weekly</span>
-                </p>
-                <p>Over the life of the loan you could pay:</p>
-                <ul>
-                  <li>
-                    Total interest:<span
-                      >$<span id="total-interest">1,309</span></span
-                    >
-                  </li>
-                  <li>
-                    Total repayments:
-                    <span>$<span id="total-repayments">11,309</span></span>
-                  </li>
-                </ul>
-                <p class="note">*Fees and charges excluded</p>
-              </div>
-
-              <div class="interest-rate">
-                <p>We've based this calculation on:</p>
-                <p>Interest rate: <span id="interest-rate">8%</span> p.a.</p>
-                <input
-                  type="range"
-                  id="interest-slider"
-                  min="5"
-                  max="12"
-                  step="0.1"
-                  value="8"
-                />
-              </div>
+            <div
+              class="cta-button-container"
+              style="
+                width: 100%;
+                height: 9vh;
+                padding-top: 2%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+              "
+            >
+              <a
+                class="cta-button-wrapper"
+                href="./contact.html"
+                style="
+                  width: 14vw;
+                  text-decoration: none;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 7vh;
+                "
+              >
+                <button
+                  class="cta-button"
+                  style="
+                    width: 100%;
+                    border-radius: 50px;
+                    height: 100%;
+                    color: currentColor;
+                    background-color: #a6fcc6;
+                    padding-left: 20px;
+                  "
+                >
+                  <span class="button-text">Enquire Now</span>
+                  <span style="width: 100%"
+                    ><img
+                      class="button-arrow"
+                      style="width: 30%; height: 30%"
+                      src="images/loan-calculator-images/right-arrow.svg"
+                  /></span>
+                </button>
+              </a>
             </div>
           </div>
         </div>
-        <div
-          class="cta-button-container"
-          style="
-            transform: translate(0%, -100%);
-            width: 100%;
-            height: 7vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          "
-        >
-          <a
-            class="cta-button-wrapper"
-            href="./contact.html"
-            style="
-              width: 12%;
-              text-decoration: none;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100%;
-            "
-          >
-            <button
-              class="cta-button"
-              style="
-                width: 100%;
-                border-radius: 50px;
-                height: 100%;
-                color: currentColor;
-                background-color: #a6fcc6;
-                padding-left: 20px;
-              "
-            >
-              <span class="button-text">Enquire Now</span>
-              <span style="width: 100%"
-                ><img
-                  class="button-arrow"
-                  style="width: 30%; height: 30%"
-                  src="images/loan-calculator-images/right-arrow.svg"
-              /></span>
-            </button>
-          </a>
-        </div>
+
         <style>
           .cta-button {
             width: 100%;

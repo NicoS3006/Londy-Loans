@@ -8182,11 +8182,13 @@ figcaption {
 }
 
 .section.cta.cta-v1 {
-  padding-top: 170px;
-  padding-bottom: 170px;
+  padding-top: 130px;
+  padding-bottom: 100px;
   overflow: hidden;
 }
-
+.logo-margin-top {
+  margin-top: 150px;
+}
 .section.cta.cta-v4 {
   padding-top: 188px;
   padding-bottom: 188px;
