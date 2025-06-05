@@ -16576,4 +16576,10 @@ figcaption {
   .hero-logo-image {
     scale: 1 !important;
   }
+  .nab-logo-hero-mobile {
+    transform: translate(0px, 0px) !important;
+  }
+  .anz-logo-hero-mobile {
+    transform: translate(0px, 0px) !important;
+  }
 }
