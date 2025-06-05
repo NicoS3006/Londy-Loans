@@ -16483,3 +16483,9 @@ figcaption {
   font-style: normal;
   font-display: swap;
 }
+
+@media (max-width: 550px) {
+  .hero-logo-image {
+    scale: 1 !important;
+  }
+}

@@ -16461,49 +16461,49 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('./fonts/car-loans-fonts/dfD6IpfDuw2e.woff2')
-    format('woff2');
+  src: url('./fonts/car-loans-fonts/dfD6IpfDuw2e.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('./fonts/car-loans-fonts/VqRjQ12WkBZk.woff2')
-    format('woff2');
+  src: url('./fonts/car-loans-fonts/VqRjQ12WkBZk.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('./fonts/car-loans-fonts/dbrfSVRVSuH3.woff')
-    format('woff');
+  src: url('./fonts/car-loans-fonts/dbrfSVRVSuH3.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('./fonts/car-loans-fonts/YHTJdIrZ5qQq.woff')
-    format('woff');
+  src: url('./fonts/car-loans-fonts/YHTJdIrZ5qQq.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('./fonts/car-loans-fonts/cPjKTliSs8AD.woff')
-    format('woff');
+  src: url('./fonts/car-loans-fonts/cPjKTliSs8AD.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('./fonts/car-loans-fonts/evBtRscYt2eQ.woff')
-    format('woff');
+  src: url('./fonts/car-loans-fonts/evBtRscYt2eQ.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+@media (max-width: 550px) {
+  .hero-logo-image {
+    scale: 1 !important;
+  }
 }
