@@ -8185,9 +8185,10 @@ figcaption {
   padding-top: 130px;
   padding-bottom: 20px;
   overflow: hidden;
+  height: 86vh;
 }
 .logo-margin-top {
-  margin-top: 40px;
+  margin-top: 100px;
 }
 .section.cta.cta-v4 {
   padding-top: 188px;

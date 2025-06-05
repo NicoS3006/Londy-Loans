@@ -951,10 +951,12 @@
               "
               class="w-layout-grid grid-1-column gap-10px"
             >
+
               <div
                 data-w-id="0ebac213-22fe-ccaf-a368-bba29a867915"
                 class="accordion-wrapper"
               >
+              
                 <div class="card number-left-card-content">
                   <div class="inner-container _202px width-100">
                     <div class="text-titles">
@@ -1656,6 +1658,15 @@
       ></div>
     </div>
     <div></div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  // This selector might need adjustment if your clickable trigger is different.
+  document.querySelectorAll('.accordion-icon-wrapper').forEach(function(icon) {
+    icon.click();
+  });
+});
+
+    </script>
     <script
       src="js/index-1.js"
       type="text/javascript"
