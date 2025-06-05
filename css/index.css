@@ -16573,4 +16573,7 @@ figcaption {
   .card.project-link-wrapper {
     min-height: 195px;
   }
+  .hero-logo-image {
+    scale: 1 !important;
+  }
 }
