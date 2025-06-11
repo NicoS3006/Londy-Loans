@@ -5426,7 +5426,6 @@ figcaption {
   display: flex;
 }
 
-
 .card.dropdown-pd {
   padding: 25px 32px 10px 32px;
   width: 250px;
@@ -9422,7 +9421,7 @@ figcaption {
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
-  width: 20vw !important;
+  width: fit-content !important;
 }
 .nav-menu-list-wrapper {
   margin-bottom: 0;
@@ -16444,48 +16443,42 @@ figcaption {
 
 @font-face {
   font-family: 'Arrows Capital X Webflow Template';
-  src: url('./fonts/blog-post-fonts/5EX1kmbM3JMe.woff2')
-    format('woff2');
+  src: url('./fonts/blog-post-fonts/5EX1kmbM3JMe.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'X Integration Capital X Webflow Template';
-  src: url('./fonts/blog-post-fonts/vK2nPqUMBqHX.woff2')
-    format('woff2');
+  src: url('./fonts/blog-post-fonts/vK2nPqUMBqHX.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Rounded';
-  src: url('./fonts/blog-post-fonts/6dgwcGz5Wi1G.woff')
-    format('woff');
+  src: url('./fonts/blog-post-fonts/6dgwcGz5Wi1G.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Social Media Icon Font BRIX';
-  src: url('./fonts/blog-post-fonts/n8DtERlga0Vv.woff')
-    format('woff');
+  src: url('./fonts/blog-post-fonts/n8DtERlga0Vv.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Icon Squared';
-  src: url('./fonts/blog-post-fonts/UDW4UHMZt6sj.woff')
-    format('woff');
+  src: url('./fonts/blog-post-fonts/UDW4UHMZt6sj.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Filled Icons';
-  src: url('./fonts/blog-post-fonts/ndpfnmh3VoBf.woff')
-    format('woff');
+  src: url('./fonts/blog-post-fonts/ndpfnmh3VoBf.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

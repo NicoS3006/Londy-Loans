@@ -9466,7 +9466,7 @@ figcaption {
   margin-right: 0;
   padding-left: 0;
   list-style-type: none;
-  width: 20vw !important;
+  width: fit-content !important;
 }
 
 .nav-menu-list-wrapper {
