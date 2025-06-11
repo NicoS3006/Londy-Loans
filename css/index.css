@@ -8494,7 +8494,7 @@ figcaption {
 }
 
 .slider-mask.portfolio-slider {
-  max-width: 426px;
+  max-width: 100%;
   overflow: visible;
 }
 
@@ -13102,7 +13102,7 @@ figcaption {
   }
 
   .slider-mask.portfolio-slider {
-    max-width: 340px;
+    max-width: 100%;
   }
 
   .logo-marquee-image-wrapper {
@@ -16546,6 +16546,13 @@ figcaption {
   }
 }
 
+.loans-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columns for tablets/desktops */
+  row-gap: 3%;
+}
+
 @media (max-width: 550px) {
   .text-wrap-mobile {
     white-space: normal !important;
@@ -16554,17 +16561,12 @@ figcaption {
     flex-direction: row !important;
     gap: 1vw !important;
   }
-  .top-row-loans {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1vh !important;
-  }
-  .bottom-row-loans {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1vh !important;
+  .loans-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns for mobile */
+    gap: 2%;
+    width: 100%;
+    box-sizing: border-box;
   }
   .card.project-link-wrapper {
     min-height: 195px;
@@ -16577,5 +16579,12 @@ figcaption {
   }
   .anz-logo-hero-mobile {
     transform: translate(0px, 0px) !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .loans-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3vw !important;
   }
 }
