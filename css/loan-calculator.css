@@ -16595,6 +16595,8 @@ select {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  white-space: nowrap;
+  font-size: clamp(12px, 1.5vw, 48px) !important;
 }
 
 .repayment-amount {
@@ -16610,7 +16612,7 @@ select {
   color: white;
   text-align: start;
   font-weight: bold;
-  font-size: 35px;
+  font-size: clamp(12px, 2.7vw, 48px) !important;
 }
 
 .repayment-results p {
