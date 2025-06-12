@@ -263,275 +263,49 @@
           </div>
         </div>
       </div>
-      <section class="section pd-0px" style="height: 100vh !important">
-        <h1 style="margin-top: 50px">Loan Repayment Calculator</h1>
+      <section class="section pd-0px" style="height: 107vh">
+        <h1 style="margin-top: 50px; padding: 0 10px">
+          Loan Repayment Calculator
+        </h1>
         <div class="calculator-container">
           <div class="calculator-lhs">
-            <div class="loan-options">
-              <label for="loan-type">The loan type I need is:</label>
-              <div class="loan-type">
-                <button class="active">Fixed Rate Loan</button>
-              </div>
-            </div>
+            <div class="lhs-height-wrapper">
+              <div class="loan-details">
+                <label for="loan-purpose">I need a loan for:</label>
+                <select id="loan-purpose">
+                  <option value="car" selected>Car</option>
+                  <option value="truck">Truck</option>
+                  <option value="ute">Ute</option>
+                  <option value="caravan">Caravan</option>
+                  <option value="boat">Boat</option>
+                  <option value="personal">Personal</option>
+                  <option value="home">Home</option>
+                  <option value="ev-hybrid">EV/Hybrid</option>
+                  <option value="equipment">Equipment</option>
+                </select>
 
-            <!-- Popup Modal -->
-            <div id="loan-info-modal" class="modal">
-              <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2>Which Loan is Right for Me?</h2>
-                <p>
-                  Choose an interest rate that stays the same, or goes up and
-                  down over time. You can also provide security, such as a car,
-                  to enjoy a typically lower fixed rate. Whichever you prefer,
-                  you’re always in charge.
-                </p>
-                <div class="loan-dropdowns">
-                  <div class="dropdown">
-                    <button class="dropdown-btn">
-                      Fixed Rate Loan
-                      <span
-                        ><img
-                          src="images/loan-calculator-images/dropdown-arrow.svg"
-                      /></span>
-                    </button>
-                    <div class="dropdown-content">
-                      <div
-                        class="first-div"
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          gap: 0px;
-                          padding: 15px 0px;
-                          border-bottom: 0.5px solid black;
-                        "
-                      >
-                        <p style="color: black; font-weight: bold; margin: 0">
-                          Fixed rate:
-                        </p>
-                        <p style="margin: 0">Range: 8.00% p.a to 20.00% p.a</p>
-                        <p style="margin: 0">Representative rate: 15.50% p.a</p>
-                      </div>
-                      <div
-                        class="second-div"
-                        style="
-                          padding: 15px 0;
-                          display: flex;
-                          flex-direction: column;
-                          border-bottom: 0.5px solid black;
-                        "
-                      >
-                        <p style="margin: 0; color: black; font-weight: bold">
-                          Comparison rate:
-                        </p>
-                        <p style="margin: 0">Range: 9.40% p.a to 21.30% p.a</p>
-                        <p style="margin: 0">Representative rate: 16.83% p.a</p>
-                      </div>
-                      <div
-                        class="third-div"
-                        style="
-                          padding: 15px 0;
-                          display: flex;
-                          border-bottom: 0.5px solid black;
-                          font-size: 15px;
-                          color: black;
-                        "
-                      >
-                        No security needed. Receive a fixed interest rate over
-                        the life of your loan.
-                      </div>
-                      <div class="fourth-div" style="padding: 15px 0">
-                        <strong>Loan term:</strong> 1–7 years
-                      </div>
-                    </div>
-                  </div>
-                  <div class="dropdown dropdown-2">
-                    <button class="dropdown-btn">
-                      Variable Rate Loan
-                      <span
-                        ><img
-                          src="images/loan-calculator-images/dropdown-arrow.svg"
-                      /></span>
-                    </button>
-                    <div class="dropdown-content">
-                      <div
-                        class="first-div"
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          gap: 0px;
-                          padding: 15px 0px;
-                          border-bottom: 0.5px solid black;
-                        "
-                      >
-                        <p style="color: black; font-weight: bold; margin: 0">
-                          Variable rate:
-                        </p>
-                        <p style="margin: 0">Range: 8.50% p.a to 20.50% p.a</p>
-                        <p style="margin: 0">Representative rate: 16.00% p.a</p>
-                      </div>
-                      <div
-                        class="second-div"
-                        style="
-                          padding: 15px 0;
-                          display: flex;
-                          flex-direction: column;
-                          border-bottom: 0.5px solid black;
-                        "
-                      >
-                        <p style="margin: 0; color: black; font-weight: bold">
-                          Comparison rate:
-                        </p>
-                        <p style="margin: 0">Range: 9.89% p.a to 21.79% p.a</p>
-                        <p style="margin: 0">Representative rate: 17.32% p.a</p>
-                      </div>
-                      <div
-                        class="third-div"
-                        style="
-                          padding: 15px 0;
-                          display: flex;
-                          border-bottom: 0.5px solid black;
-                          font-size: 15px;
-                          color: black;
-                        "
-                      >
-                        No security needed. Have the flexibility to make
-                        additional repayments at any time without a fee.
-                      </div>
-                      <div class="fourth-div" style="padding: 15px 0">
-                        <strong>Loan term:</strong> 1–7 years
-                      </div>
-                    </div>
-                  </div>
-                  <div class="dropdown">
-                    <button class="dropdown-btn">
-                      Secured Personal Loan
-                      <span
-                        ><img
-                          src="images/loan-calculator-images/dropdown-arrow.svg"
-                      /></span>
-                    </button>
-                    <div class="dropdown-content">
-                      <div
-                        class="first-div"
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          gap: 0px;
-                          padding: 15px 0px;
-                          border-bottom: 0.5px solid black;
-                        "
-                      >
-                        <p style="color: black; font-weight: bold; margin: 0">
-                          Fixed rate:
-                        </p>
-                        <p style="margin: 0">Range: 6.49% p.a to 10.49% p.a</p>
-                        <p style="margin: 0">Representative rate: 8.49% p.a</p>
-                      </div>
-                      <div
-                        class="second-div"
-                        style="
-                          padding: 15px 0;
-                          display: flex;
-                          flex-direction: column;
-                          border-bottom: 0.5px solid black;
-                        "
-                      >
-                        <p style="margin: 0; color: black; font-weight: bold">
-                          Comparison rate:
-                        </p>
-                        <p style="margin: 0">Range: 7.90% p.a to 11.86% p.a</p>
-                        <p style="margin: 0">Representative rate: 9.88% p.a</p>
-                      </div>
-                      <div
-                        class="third-div"
-                        style="
-                          padding: 15px 0;
-                          display: flex;
-                          border-bottom: 0.5px solid black;
-                          font-size: 15px;
-                          color: black;
-                        "
-                      >
-                        Use the car you are buying (if not already under
-                        finance) as security to borrow at a lower fixed rate.
-                      </div>
-                      <div class="fourth-div" style="padding: 15px 0">
-                        <strong>Loan term:</strong> 1–7 years
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="pop-up-ok-container"
-                  style="
-                    margin-top: 40px;
-                    height: 6vh;
-                    display: flex;
-                    align-items: start;
-                    justify-content: start;
-                  "
+                <label for="loan-amount">Loan Amount:</label>
+                <input
+                  type="number"
+                  id="loan-amount"
+                  value="10000"
+                  min="1000"
+                  step="100"
+                />
+              </div>
+              <div class="loan-term-input">
+                <label for="loan-term" style="margin-bottom: 15px"
+                  >And pay it off within the following years:</label
                 >
-                  <div
-                    class="pop-up-ok-button-container"
-                    style="
-                      height: 100%;
-                      width: 30%;
-                      border: 0.5px solid #1e1e1e;
-                      border-radius: 10px;
-                    "
-                  >
-                    <button
-                      class="pop-up-ok-button"
-                      style="
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      Ok
-                    </button>
-                  </div>
+                <div class="loan-term">
+                  <button data-years="1">1</button>
+                  <button data-years="2" class="active">2</button>
+                  <button data-years="3">3</button>
+                  <button data-years="4">4</button>
+                  <button data-years="5">5</button>
+                  <button data-years="6">6</button>
+                  <button data-years="7">7</button>
                 </div>
-              </div>
-            </div>
-
-            <div class="loan-details">
-              <label for="loan-purpose">I need a loan for:</label>
-              <select id="loan-purpose">
-                <option value="car" selected>Car</option>
-                <option value="truck">Truck</option>
-                <option value="ute">Ute</option>
-                <option value="caravan">Caravan</option>
-                <option value="boat">Boat</option>
-                <option value="personal">Personal</option>
-                <option value="home">Home</option>
-                <option value="ev-hybrid">EV/Hybrid</option>
-                <option value="equipment">Equipment</option>
-              </select>
-
-              <label for="loan-amount">Loan Amount:</label>
-              <input
-                type="number"
-                id="loan-amount"
-                value="10000"
-                min="1000"
-                step="100"
-              />
-            </div>
-            <div class="loan-term-input">
-              <label for="loan-term" style="margin-bottom: 15px"
-                >And pay it off within the following years:</label
-              >
-              <div class="loan-term">
-                <button data-years="1">1</button>
-                <button data-years="2" class="active">2</button>
-                <button data-years="3">3</button>
-                <button data-years="4">4</button>
-                <button data-years="5">5</button>
-                <button data-years="6">6</button>
-                <button data-years="7">7</button>
               </div>
             </div>
           </div>
@@ -545,62 +319,53 @@
             "
           >
             <div class="calculator-rhs">
-              <div class="repayment-tabs">
-                <button
-                  class="active repayment-buttons"
-                  data-frequency="weekly"
-                  style="margin: 3px"
-                >
-                  Weekly
-                </button>
-                <button
-                  data-frequency="fortnightly"
-                  class="repayment-buttons"
-                  style="margin: 3px"
-                >
-                  Fortnightly
-                </button>
-                <button
-                  data-frequency="monthly"
-                  class="repayment-buttons"
-                  style="margin: 3px"
-                >
-                  Monthly
-                </button>
-              </div>
-              <div class="padded-body" style="padding: 20px">
-                <div class="repayment-results">
-                  <h2>Your estimated repayments are</h2>
-                  <p class="repayment-amount">
-                    $<span id="repayment-value">110</span>
-                    <span id="repayment-frequency">Weekly</span>
-                  </p>
-                  <p>Over the life of the loan you could pay:</p>
-                  <ul>
-                    <li>
-                      Total interest:<span
-                        >$<span id="total-interest">1,309</span></span
-                      >
-                    </li>
-                    <li>
-                      Total repayments:
-                      <span>$<span id="total-repayments">11,309</span></span>
-                    </li>
-                  </ul>
-                  <p class="note">*Fees and charges excluded</p>
+              <div class="rhs-height-wrapper">
+                <div class="repayment-tabs">
+                  <button
+                    class="active repayment-buttons"
+                    data-frequency="weekly"
+                    style="margin: 3px"
+                  >
+                    Weekly
+                  </button>
+                  <button
+                    data-frequency="fortnightly"
+                    class="repayment-buttons"
+                    style="margin: 3px"
+                  >
+                    Fortnightly
+                  </button>
+                  <button
+                    data-frequency="monthly"
+                    class="repayment-buttons"
+                    style="margin: 3px"
+                  >
+                    Monthly
+                  </button>
                 </div>
+                <div class="padded-body" style="padding: 20px">
+                  <div class="repayment-results">
+                    <h2>Your estimated repayments are</h2>
+                    <p class="repayment-amount">
+                      $<span id="repayment-value">110</span>
+                      <span id="repayment-frequency">Weekly</span>
+                    </p>
+                  </div>
 
-                <div class="interest-rate">
-                  <p>We've based this calculation on:</p>
-                  <p>Interest rate: <span id="interest-rate">8%</span> p.a.</p>
-                  <input
-                    type="range"
-                    id="interest-slider"
-                    min="5"
-                    max="12"
-                    step="0.1"
-                    value="8"
-                  />
+                  <div class="interest-rate">
+                    <p>We've based this calculation on:</p>
+                    <p>
+                      Interest rate: <span id="interest-rate">8%</span> p.a.
+                    </p>
+                    <input
+                      type="range"
+                      id="interest-slider"
+                      min="5"
+                      max="12"
+                      step="0.1"
+                      value="8"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
