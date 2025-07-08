@@ -8059,6 +8059,7 @@ figcaption {
 }
 
 .header-wrapper.v3 {
+  background-color: #a6fcc6 !important;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -8184,7 +8185,7 @@ figcaption {
   height: 86vh;
 }
 .logo-margin-top {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .section.cta.cta-v4 {
   padding-top: 188px;
@@ -8353,6 +8354,10 @@ figcaption {
   padding-top: 230px;
 }
 
+
+.section.pd-top-140px {
+    padding-top: 140px;
+  }
 .section.bg-neutral-800 {
   background-color: var(--core--colors--neutral--800);
 }

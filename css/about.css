@@ -8017,10 +8017,10 @@ figcaption {
 }
 
 .header-wrapper.v3 {
+  background-color: #a6fcc6 !important;
   padding-top: 0;
   padding-bottom: 0;
 }
-
 .header-container-wrapper {
   grid-column-gap: var(--globals--gaps--gap-medium);
   justify-content: space-between;

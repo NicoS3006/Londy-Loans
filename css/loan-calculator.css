@@ -8030,6 +8030,7 @@ figcaption {
 }
 
 .header-wrapper.v3 {
+  background-color: #a6fcc6 !important;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -16680,17 +16681,7 @@ li {
   transition: background 0.3s ease; /* Smooth transition for the background */
 }
 
-/* Style the slider thumb (the draggable circle) */
-#interest-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #000; /* Thumb color */
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #a6fcc6; /* Optional: Add a border to the thumb */
-}
+
 
 #interest-slider::-moz-range-thumb {
   width: 20px;
@@ -16877,4 +16868,38 @@ body.no-scroll {
   .section.pd-0px {
     height: 160vh !important;
   }
+}
+
+
+
+
+#interest-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #e9e9e9; /* Fallback color for the track */
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s ease; /* Optional: smooth transition */
+}
+
+#interest-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border: 3px solid #a6fcc6;
+  border-radius: 50%;
+  margin-top: -3px; /* A less negative value moves it DOWN */
+}
+
+#interest-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border: 3px solid #a6fcc6;
+  border-radius: 50%;
 }

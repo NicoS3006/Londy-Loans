@@ -1,176 +1,196 @@
-const loanAmountInput = document.getElementById("loan-amount");
-const loanTermButtons = document.querySelectorAll(".loan-term button");
-const repaymentTabs = document.querySelectorAll(".repayment-tabs button");
-const interestSlider = document.getElementById("interest-slider");
-const loanTypeButtons = document.querySelectorAll(".loan-type button");
-const loanPurposeSelect = document.getElementById("loan-purpose");
+document.addEventListener('DOMContentLoaded', () => {
 
-const repaymentValue = document.getElementById("repayment-value");
-const repaymentFrequency = document.getElementById("repayment-frequency");
-const totalInterest = document.getElementById("total-interest");
-const totalRepayments = document.getElementById("total-repayments");
-const interestRateDisplay = document.getElementById("interest-rate");
+  const loanAmountInput = document.getElementById("loan-amount");
+  const loanTermButtons = document.querySelectorAll(".loan-term button");
+  const repaymentTabs = document.querySelectorAll(".repayment-tabs button");
+  const interestSlider = document.getElementById("interest-slider");
+  const loanTypeButtons = document.querySelectorAll(".loan-type button");
+  const loanPurposeSelect = document.getElementById("loan-purpose");
 
-let loanAmount = parseFloat(loanAmountInput.value);
-let loanTerm = 2; // Default to 2 years
-let interestRate = 8; // Default to 8% for all purposes
-let frequency = "weekly"; // Default frequency
+  const repaymentValue = document.getElementById("repayment-value");
+  const repaymentFrequency = document.getElementById("repayment-frequency");
+  const totalInterest = document.getElementById("total-interest");
+  const totalRepayments = document.getElementById("total-repayments");
+  const interestRateDisplay = document.getElementById("interest-rate");
 
-function calculateRepayments() {
-  const annualRate = interestRate / 100;
-  let paymentsPerYear;
+  let loanAmount = loanAmountInput ? parseFloat(loanAmountInput.value) : 30000;
+  let loanTerm = 2;
+  let interestRate = 6.9;
+  let frequency = "weekly";
 
-  if (frequency === "weekly") {
-    paymentsPerYear = 52;
-  } else if (frequency === "fortnightly") {
-    paymentsPerYear = 26;
-  } else if (frequency === "monthly") {
-    paymentsPerYear = 12;
-  }
+  function calculateRepayments() {
+    const annualRate = interestRate / 100;
+    let paymentsPerYear;
 
-  const totalPayments = loanTerm * paymentsPerYear;
-  const periodicRate = annualRate / paymentsPerYear;
-
-  const repayment = (loanAmount * periodicRate) / (1 - Math.pow(1 + periodicRate, -totalPayments));
-
-  const totalRepayment = repayment * totalPayments;
-  const totalInterestPaid = totalRepayment - loanAmount;
-
-  repaymentValue.textContent = Math.round(repayment);
-  totalInterest.textContent = Math.round(totalInterestPaid);
-  totalRepayments.textContent = Math.round(totalRepayment);
-}
-
-function updateSliderBackground() {
-  const value = interestSlider.value;
-  const min = interestSlider.min;
-  const max = interestSlider.max;
-  const percentage = ((value - min) / (max - min)) * 100;
-  interestSlider.style.background = `linear-gradient(to right, #a6fcc6 ${percentage}%, #fff ${percentage}%)`;
-}
-
-function updateInterestRate(newRate, minRange, maxRange) {
-  interestRate = newRate;
-  interestSlider.min = minRange;
-  interestSlider.max = maxRange;
-  interestSlider.value = newRate;
-  interestRateDisplay.textContent = `${newRate.toFixed(2)}%`;
-  updateSliderBackground();
-  calculateRepayments();
-}
-
-// Handle loan type buttons
-loanTypeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    loanTypeButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    if (button.textContent === "Fixed Rate Loan") {
-      updateInterestRate(8, 5, 12); // Changed from 16 to 8
-    } else if (button.textContent === "Variable Rate Loan") {
-      updateInterestRate(8, 5, 12); // Changed from 15 to 8
-    } else if (button.textContent === "Secured Personal Loan") {
-      updateInterestRate(8, 5, 12); // Changed from 8.49 to 8
+    if (frequency === "weekly") {
+      paymentsPerYear = 52;
+    } else if (frequency === "fortnightly") {
+      paymentsPerYear = 26;
+    } else if (frequency === "monthly") {
+      paymentsPerYear = 12;
     }
-  });
-});
 
-// Handle loan purpose dropdown (car, truck, ute, etc.)
-loanPurposeSelect.addEventListener("change", () => {
-  // Always reset to default 8% for all options
-  updateInterestRate(8, 5, 12);
-});
+    const totalPayments = loanTerm * paymentsPerYear;
+    const periodicRate = annualRate / paymentsPerYear;
 
-loanAmountInput.addEventListener("input", (e) => {
-  loanAmount = parseFloat(e.target.value);
-  calculateRepayments();
-});
+    const repayment = (loanAmount * periodicRate) / (1 - Math.pow(1 + periodicRate, -totalPayments));
+    const totalRepayment = repayment * totalPayments;
+    const totalInterestPaid = totalRepayment - loanAmount;
 
-loanTermButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    loanTermButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
-    loanTerm = parseInt(button.dataset.years);
-    calculateRepayments();
-  });
-});
-
-repaymentTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    repaymentTabs.forEach((btn) => btn.classList.remove("active"));
-    tab.classList.add("active");
-    frequency = tab.dataset.frequency;
-    repaymentFrequency.textContent = frequency.charAt(0).toUpperCase() + frequency.slice(1);
-    calculateRepayments();
-  });
-});
-
-interestSlider.addEventListener("input", (e) => {
-  interestRate = parseFloat(e.target.value);
-  interestRateDisplay.textContent = `${interestRate.toFixed(2)}%`;
-  calculateRepayments();
-  updateSliderBackground();
-});
-
-// Initialize
-updateSliderBackground();
-calculateRepayments();
-
-
-// Modal functionality
-const loanInfoBtn = document.getElementById("loan-info-btn");
-const modal = document.getElementById("loan-info-modal");
-const closeBtn = document.querySelector(".close-btn");
-const okBtn = document.querySelector(".pop-up-ok-button");
-const body = document.body;
-
-loanInfoBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-  body.classList.add("no-scroll");
-});
-
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-  body.classList.remove("no-scroll");
-});
-
-okBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-  body.classList.remove("no-scroll");
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-    body.classList.remove("no-scroll");
+    // --- SAFETY CHECKS ADDED ---
+    if (repaymentValue) {
+      repaymentValue.textContent = Math.round(repayment);
+    }
+    if (totalInterest) {
+      totalInterest.textContent = Math.round(totalInterestPaid);
+    }
+    if (totalRepayments) {
+      totalRepayments.textContent = Math.round(totalRepayment);
+    }
   }
-});
 
-// Dropdown functionality
-const dropdowns = document.querySelectorAll(".dropdown");
+  function updateSliderBackground() {
+    if (!interestSlider) return;
+    const value = interestSlider.value;
+    const min = interestSlider.min;
+    const max = interestSlider.max;
+    const percentage = ((value - min) / (max - min)) * 100;
+    interestSlider.style.background = `linear-gradient(to right, #a6fcc6 ${percentage}%, #e9e9e9 ${percentage}%)`;
+  }
 
-dropdowns.forEach((dropdown) => {
-  const btn = dropdown.querySelector(".dropdown-btn");
-  const content = dropdown.querySelector(".dropdown-content");
+  function updateInterestRate(newRate, minRange, maxRange) {
+    interestRate = newRate;
+    if (interestSlider) {
+        interestSlider.min = minRange;
+        interestSlider.max = maxRange;
+        interestSlider.value = newRate;
+    }
+    if (interestRateDisplay) {
+        interestRateDisplay.textContent = `${newRate.toFixed(2)}%`;
+    }
+    updateSliderBackground();
+    calculateRepayments();
+  }
+  
+  if (loanTypeButtons) {
+      loanTypeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          loanTypeButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          updateInterestRate(6.9, 5, 12);
+        });
+      });
+  }
+  
+  if (loanPurposeSelect) {
+      loanPurposeSelect.addEventListener("change", () => {
+        updateInterestRate(6.9, 5, 12);
+      });
+  }
 
-  btn.addEventListener("click", () => {
-    const isActive = dropdown.classList.contains("active");
+  if (loanAmountInput) {
+      loanAmountInput.addEventListener("input", (e) => {
+        loanAmount = parseFloat(e.target.value);
+        calculateRepayments();
+      });
+  }
+  
+  if(loanTermButtons) {
+      loanTermButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          loanTermButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          loanTerm = parseInt(button.dataset.years);
+          calculateRepayments();
+        });
+      });
+  }
+  
+  if(repaymentTabs) {
+      repaymentTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          repaymentTabs.forEach((btn) => btn.classList.remove("active"));
+          tab.classList.add("active");
+          frequency = tab.dataset.frequency;
+          if(repaymentFrequency) {
+              repaymentFrequency.textContent = frequency.charAt(0).toUpperCase() + frequency.slice(1);
+          }
+          calculateRepayments();
+        });
+      });
+  }
 
-    dropdowns.forEach((d) => {
-      d.classList.remove("active");
-      d.querySelector(".dropdown-content").style.height = "0";
+  if (interestSlider) {
+      interestSlider.addEventListener("input", (e) => {
+        interestRate = parseFloat(e.target.value);
+        if (interestRateDisplay) {
+            interestRateDisplay.textContent = `${interestRate.toFixed(2)}%`;
+        }
+        calculateRepayments();
+        updateSliderBackground();
+      });
+  }
+  
+  // Modal and Dropdown functionality
+  const loanInfoBtn = document.getElementById("loan-info-btn");
+  const modal = document.getElementById("loan-info-modal");
+  const closeBtn = document.querySelector(".close-btn");
+  const okBtn = document.querySelector(".pop-up-ok-button");
+  const body = document.body;
+
+  if (loanInfoBtn && modal && body) {
+    loanInfoBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+      body.classList.add("no-scroll");
     });
+  }
+  
+  const closeModal = () => {
+      if(modal && body) {
+          modal.style.display = "none";
+          body.classList.remove("no-scroll");
+      }
+  };
 
-    if (!isActive) {
-      dropdown.classList.add("active");
-      content.style.height = `${content.scrollHeight}px`;
-    } else {
-      dropdown.classList.remove("active");
-      content.style.height = "0";
+  if(closeBtn) closeBtn.addEventListener("click", closeModal);
+  if(okBtn) okBtn.addEventListener("click", closeModal);
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
     }
   });
-});
+  
+  const dropdowns = document.querySelectorAll(".dropdown");
+  if(dropdowns) {
+      dropdowns.forEach((dropdown) => {
+        const btn = dropdown.querySelector(".dropdown-btn");
+        const content = dropdown.querySelector(".dropdown-content");
+        if(btn && content){
+            btn.addEventListener("click", () => {
+              const isActive = dropdown.classList.contains("active");
+              dropdowns.forEach((d) => {
+                d.classList.remove("active");
+                d.querySelector(".dropdown-content").style.height = "0";
+              });
+              if (!isActive) {
+                dropdown.classList.add("active");
+                content.style.height = `${content.scrollHeight}px`;
+              } else {
+                dropdown.classList.remove("active");
+                content.style.height = "0";
+              }
+            });
+        }
+      });
+  }
 
-modal.addEventListener("wheel", (e) => {
-  e.stopPropagation();
+  if(modal) {
+    modal.addEventListener("wheel", (e) => {
+      e.stopPropagation();
+    });
+  }
+  
+  // Initialize
+  updateInterestRate(6.9, 5, 12);
 });
