@@ -41,6 +41,8 @@
     <meta content="Webflow" name="generator" />
     <link href="css/index.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <link
       href="https://fonts.gstatic.com"
       rel="preconnect"
@@ -454,6 +456,436 @@
               </div>
             </div>
           </section>
+          <style>
+        /* --- CSS Reset & Base Styles --- */
+        :root {
+            --primary-color: #a6fcc6;
+            --dark-color: #0c2916;
+            --text-color: #1a202c;
+            --light-gray: #e2e8f0;
+            --white: #ffffff;
+            --red-error: #e53e3e;
+        }
+
+  /* --- Main Layout --- */
+        .mobile-viewport {
+            width: 100%;
+            max-width: 448px; /* max-w-md */
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative; /* Needed for toast positioning */
+            overflow: hidden; /* Hide toast when it's outside */
+        }
+
+        /* --- Form Container --- */
+        .form-container {
+            background-color: var(--primary-color);
+            border-top-left-radius: 24px; /* rounded-t-3xl */
+            border-top-right-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 -8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700;
+            text-align: center;
+            color: var(--dark-color);
+            margin-bottom: 24px;
+        }
+
+        /* --- Form Elements --- */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--light-gray);
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-input::placeholder {
+            color: #a0aec0;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(12, 41, 22, 0.3);
+            border-color: var(--dark-color);
+        }
+        
+        .form-input.error {
+            border-color: var(--red-error);
+        }
+        .form-input.error:focus {
+             box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.4);
+        }
+
+        /* --- Amount Input with Stepper --- */
+        .amount-wrapper {
+            position: relative;
+        }
+        
+        .amount-wrapper .form-input {
+            padding-right: 48px; /* pr-12 */
+        }
+
+        .amount-stepper {
+            position: absolute;
+            inset: 0 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8px;
+        }
+
+        .amount-stepper button {
+            height: 50%;
+            padding: 0 8px;
+            color: #4a5568;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .amount-stepper button:hover {
+            color: #000;
+        }
+        
+        /* Hide default number input spinners */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .input-hint {
+            font-size: 0.75rem;
+            color: #4a5568;
+            margin-top: 4px;
+            padding-left: 4px;
+        }
+
+        /* --- Custom Checkbox --- */
+        .terms-group {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-checkbox {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid var(--text-color);
+            border-radius: 0.25rem;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+
+        .custom-checkbox:checked {
+            background-color: var(--dark-color);
+            border-color: var(--dark-color);
+        }
+
+        .custom-checkbox:checked::after {
+            content: '';
+            display: block;
+            width: 0.35rem;
+            height: 0.7rem;
+            border: solid var(--white);
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 0px;
+            left: 5px;
+        }
+
+        .terms-group label {
+            margin-left: 12px;
+            font-size: 0.875rem;
+            color: #2d3748;
+        }
+        
+        .terms-group label.error-text {
+            color: var(--red-error);
+        }
+
+        .terms-group a {
+            font-weight: 600;
+            color: var(--dark-color);
+            text-decoration: underline;
+        }
+        .terms-group a:hover {
+            color: #000;
+        }
+
+        /* --- Submit Button --- */
+        .submit-button {
+            width: 100%;
+            background-color: var(--dark-color);
+            color: var(--white);
+            font-weight: 700;
+            padding: 16px;
+            margin-top: 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #000;
+            transform: scale(1.02);
+        }
+        
+        .submit-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(12, 41, 22, 0.4);
+        }
+        
+        .submit-button:disabled {
+            background-color: #4a5568;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* --- Toast Notification --- */
+        #toast {
+            position: fixed;
+            bottom: -100px; /* Start off-screen */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: bottom 0.5s ease-in-out;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #toast-message {
+          white-space: nowrap;
+        }
+        #toast.show {
+            bottom: 20px; /* Slide in */
+        }
+        
+        #toast i {
+            margin-right: 12px;
+        }
+
+        /* --- Utility Classes --- */
+        .hidden {
+            display: none;
+        }
+        @media (min-width: 500px) {
+          .mobile-loan-apply {
+            display: none !important;
+          }
+        }
+
+          @media (max-width: 500px) {
+          .mobile-loan-apply {
+            display: block !important;
+          }
+          .section.logo-strip-section {
+            display: none !important
+          }
+          .bg-image-gradient-overlay.gradient-bottom.v1 {
+            display: none !important;
+          }
+          .section.hero.v1 {
+            min-height: fit-content;
+          }
+          .hero-wrapper {
+            height: 120vh !important;
+          }
+        }
+    </style>
+          <section class="mobile-loan-apply">
+            <div id="form-wrapper">
+            <div class="form-container">
+                <h2>Need a New Ride?</h2>
+                
+                <form id="loan-form" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="first-name" name="firstName" placeholder="First Name*" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="last-name" name="lastName" placeholder="Last Name*" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email*" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <!-- UPDATED: Added inputmode="numeric" to bring up the number pad on mobile -->
+                        <input type="tel" id="phone" name="phone" placeholder="Phone*" class="form-input" required inputmode="numeric">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="amount-wrapper">
+                            <input type="number" id="amount" name="amount" placeholder="Amount borrowing*" class="form-input" required>
+                            <div class="amount-stepper">
+                                <button type="button" onclick="stepAmount(100)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/></svg>
+                                </button>
+                                <button type="button" onclick="stepAmount(-100)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="input-hint">E.g: 10500</p>
+                    </div>
+                    
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" name="terms" class="custom-checkbox" required>
+                        <label for="terms">
+                            I agree to the 
+                            <a href="#">terms of use.</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">
+                        APPLY FOR YOUR BEST RATE
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast">
+
+             <span id="toast-message"></span>
+             <i data-feather="check-circle"></i>
+        </div>
+    </section>
+    <script>
+        // --- JavaScript for Form Interactivity ---
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        function stepAmount(amount) {
+            const amountInput = document.getElementById('amount');
+            let currentValue = parseInt(amountInput.value, 10) || 0;
+            amountInput.value = currentValue + amount;
+        }
+
+        const form = document.getElementById('loan-form');
+        const submitButton = form.querySelector('.submit-button');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+            const requiredFields = form.querySelectorAll('[required]');
+            
+            requiredFields.forEach(field => {
+                // Reset styles
+                field.classList.remove('error');
+                if (field.type === 'checkbox') {
+                    field.nextElementSibling.classList.remove('error-text');
+                }
+
+                // Validate
+                if ((field.type === 'checkbox' && !field.checked) || (field.type !== 'checkbox' && !field.value)) {
+                    isValid = false;
+                    if (field.type !== 'checkbox') {
+                        field.classList.add('error');
+                    } else {
+                        field.nextElementSibling.classList.add('error-text');
+                    }
+                }
+            });
+
+            if (isValid) {
+                // IMPORTANT: Replace this with your actual Google Apps Script URL
+                const googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycbxl0NddQa9agu-FF9_nrVZQqf-ITl9MxV_uFMiDbvwxjT-O_LLB3ILtugYvtiY_-mjR/exec';
+
+                // Disable button to prevent multiple submissions
+                submitButton.disabled = true;
+                submitButton.textContent = 'SENDING...';
+
+                // Create a FormData object to send the form data
+                const formData = new FormData(form);
+
+                fetch(googleAppsScriptUrl, {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json()) // Assuming your script returns JSON
+                .then(data => {
+                    console.log('Success:', data);
+                    form.reset(); // Clear all form fields
+                    showToast('Thank you! Your application has been sent.');
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    showToast('An error occurred. Please try again.', true);
+                })
+                .finally(() => {
+                    // Re-enable the button
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'APPLY FOR YOUR BEST RATE';
+                });
+
+            } else {
+                console.log('Form validation failed.');
+            }
+        });
+
+        function showToast(message, isError = false) {
+            toastMessage.textContent = message;
+            
+            // Change color for errors
+            if(isError) {
+                toast.style.backgroundColor = 'var(--red-error)';
+                toast.style.color = 'var(--white)';
+            } else {
+                toast.style.backgroundColor = 'var(--primary-color)';
+                toast.style.color = 'var(--dark-color)';
+            }
+
+            toast.classList.add('show');
+
+            // Hide the toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+    </script>
           <div class="image-wrapper hero-full-image-section">
             <img
               src="images/index-images/potential-hero5.png"
@@ -1185,6 +1617,7 @@
                         data-w-id="e280c301-b2a4-917d-c00c-6337f36df458"
                         href="./company-pages/about"
                         class="link-underline-container w-inline-block"
+                        style="display: block; background-color: transparent !important; font-size: 16px;"
                         ><div>About us</div>
                         <div class="link-underline-wrapper">
                           <div class="link-underline"></div></div
@@ -1573,6 +2006,7 @@
                       data-w-id="4a2e0fe0-0f75-5df7-d5bc-b6f75655d635"
                       href="./contact.html"
                       class="link-underline-container w-inline-block"
+                      style="display: block ;"
                       ><div>Contact</div>
                       <div class="link-underline-wrapper">
                         <div class="link-underline "></div></div></a
@@ -1580,6 +2014,7 @@
                       data-w-id="4a2e0fe0-0f75-5df7-d5bc-b6f75655d635"
                       href="./about.html"
                       class="link-underline-container w-inline-block"
+                      style="display: block;"
                       ><div>Learn More</div>
                       <div class="link-underline-wrapper ">
                         <div class="link-underline "></div></div
