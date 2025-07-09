@@ -9381,6 +9381,15 @@ figcaption {
   font-weight: 400;
   text-decoration: none;
   transition: transform 0.3s, color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  height: 3rem;
+  width: fit-content;
+  background-color: #a6fcc6 !important;
 }
 
 .link-underline-container:hover {

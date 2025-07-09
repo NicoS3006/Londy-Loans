@@ -9332,6 +9332,7 @@ figcaption {
   font-weight: 400;
   text-decoration: none;
   transition: transform 0.3s, color 0.3s;
+
 }
 
 .link-underline-container:hover {
