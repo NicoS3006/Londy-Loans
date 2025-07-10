@@ -8157,8 +8157,8 @@ figcaption {
   display: flex;
 }
 
-.logo-wrapper._106px {
-  max-width: 106px;
+.logo-wrapper.size_adjust {
+  width: 13vw;
 }
 
 .social-media-grid {
