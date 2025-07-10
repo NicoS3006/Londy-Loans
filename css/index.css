@@ -8184,6 +8184,12 @@ figcaption {
   overflow: hidden;
   height: 86dvh;
 }
+
+@media (max-width: 700px) {
+  .section.cta.cta-v1 {
+  height: 65dvh;
+}
+}
 .logo-margin-top {
   margin-top: 50px;
 }
