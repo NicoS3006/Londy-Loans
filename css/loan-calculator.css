@@ -859,7 +859,8 @@ textarea.w-select {
     width: 100% !important;
   }
   .cta-button-wrapper {
-    width: 54vw !important;
+    width: fit-content !important;
+    max-width: 50vw;
   }
   .w-hidden-main,
   .w-hidden-medium {
@@ -16902,4 +16903,13 @@ body.no-scroll {
   background: #ffffff;
   border: 3px solid #a6fcc6;
   border-radius: 50%;
+}
+
+.section.pd-0px {
+  height: 90vh;
+}
+@media (max-width: 500px) {
+  .section.pd-0px {
+  height: 107vh;
+}
 }
