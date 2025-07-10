@@ -324,6 +324,12 @@
                 </div>
               </div>
             </div>
+           <style>
+  /* Style for invalid form inputs */
+  .input-line.error, .text-area-line.error {
+    border-color: #e53e3e !important; /* Red border for errors */
+  }
+</style>
             <div
               id="w-node-_6c23dc27-a3fc-78b1-3e62-95fef1c6993a-cd21a1f0"
               class="contact-hero-colum-right"
@@ -406,7 +412,6 @@
                         placeholder="Company"
                         type="text"
                         id="company"
-                        required=""
                       />
                     </div>
                     <div
@@ -993,5 +998,79 @@
     <script src="js/contact-3.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.6/bundled/lenis.min.js"></script>
     <script src="js/lenis-scroll.js" defer></script>
+   <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('wf-form-Contact-Form');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const submitButton = contactForm.querySelector('input[type="submit"]');
+        const originalButtonText = submitButton.value;
+
+        // --- MODIFIED: Immediately change button state for instant feedback ---
+        submitButton.value = 'Sending...';
+        submitButton.disabled = true;
+
+
+        // --- Client-Side Validation ---
+        let isFormValid = true;
+        const requiredInputs = contactForm.querySelectorAll('[required]');
+
+        requiredInputs.forEach(input => {
+          let isFieldValid = true;
+          if (!input.value.trim()) {
+            isFieldValid = false;
+          }
+          if (input.type === 'email' && input.value.trim()) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(input.value)) {
+              isFieldValid = false;
+            }
+          }
+          if (!isFieldValid) {
+            isFormValid = false;
+          }
+        });
+
+        if (!isFormValid) {
+          console.log('Form validation failed. Allowing Webflow to handle UI.');
+          // --- MODIFIED: Revert button state if validation fails ---
+          submitButton.value = originalButtonText;
+          submitButton.disabled = false;
+          return; 
+        }
+
+        // --- Form Submission ---
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwytAjTSSb8wnIBm9VW4u0zRqEAUIf9D_jL9GV-hd8S532vEs5AeQP7SDIBVTjHVsfB/exec';
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
+          .then(response => {
+            if (!response.ok) {
+                throw new Error(`Network response was not ok, status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (data.success) {
+              console.log('Form submitted successfully.');
+              contactForm.reset();
+            } else {
+              throw new Error(data.error || 'An unknown error occurred in the script.');
+            }
+          })
+          .catch(error => {
+            console.error('Submission Error:', error);
+          })
+          .finally(() => {
+            // --- MODIFIED: This now only runs after a network request ---
+            submitButton.value = originalButtonText;
+            submitButton.disabled = false;
+          });
+      });
+    }
+  });
+</script>
   </body>
 </html>
