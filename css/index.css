@@ -16593,6 +16593,10 @@ figcaption {
   }
   .hero-logo-image {
     scale: 1 !important;
+    image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0); /* trigger GPU acceleration */
+  backface-visibility: hidden;
   }
   .nab-logo-hero-mobile {
     transform: translate(0px, 0px) !important;
