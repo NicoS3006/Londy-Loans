@@ -8187,7 +8187,7 @@ figcaption {
 
 @media (max-width: 700px) {
   .section.cta.cta-v1 {
-  height: 65dvh;
+  height: 76dvh;
 }
 }
 .logo-margin-top {
@@ -9390,7 +9390,7 @@ figcaption {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 18px;
   font-size: 0.9rem;
   border-radius: 50px;
   height: 3rem;
