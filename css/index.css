@@ -10319,7 +10319,7 @@ figcaption {
 
 .line---title-flex-v1 {
   grid-column-gap: 20px;
-  grid-row-gap: 16px;
+  grid-row-gap: 24px;
   flex-flow: wrap;
   justify-content: flex-start;
   align-items: flex-start;
@@ -16574,6 +16574,12 @@ figcaption {
 }
 
 @media (max-width: 550px) {
+  #w-node-_5ad39a23-5ccb-4e5c-e8d5-c69b541f972e-cd21a10b {
+    display: none !important;
+  }
+  .mobile-hide {
+    display: none;
+  }
   .text-wrap-mobile {
     white-space: normal !important;
   }
