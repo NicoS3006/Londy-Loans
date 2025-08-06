@@ -805,108 +805,110 @@
         </div>
     </section>
     <script>
-        // --- JavaScript for Form Interactivity ---
+    // --- JavaScript for Form Interactivity ---
 
-        // Initialize Feather Icons
-        feather.replace();
+    // Initialize Feather Icons
+    feather.replace();
 
-        function stepAmount(amount) {
-            const amountInput = document.getElementById('amount');
-            let currentValue = parseInt(amountInput.value, 10) || 0;
-            amountInput.value = currentValue + amount;
-        }
+    function stepAmount(amount) {
+        const amountInput = document.getElementById('amount');
+        let currentValue = parseInt(amountInput.value, 10) || 0;
+        amountInput.value = currentValue + amount;
+    }
 
-        const form = document.getElementById('loan-form');
-        const submitButton = form.querySelector('.submit-button');
-        const toast = document.getElementById('toast');
-        const toastMessage = document.getElementById('toast-message');
+    const form = document.getElementById('loan-form');
+    const submitButton = form.querySelector('.submit-button');
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            let isValid = true;
-            const requiredFields = form.querySelectorAll('[required]');
-            
-            requiredFields.forEach(field => {
-                // Reset styles
-                field.classList.remove('error');
-                if (field.type === 'checkbox') {
-                    field.nextElementSibling.classList.remove('error-text');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let isValid = true;
+        const requiredFields = form.querySelectorAll('[required]');
+
+        requiredFields.forEach(field => {
+            // Reset styles
+            field.classList.remove('error');
+            if (field.type === 'checkbox') {
+                field.nextElementSibling.classList.remove('error-text');
+            }
+
+            // Validate
+            if ((field.type === 'checkbox' && !field.checked) || (field.type !== 'checkbox' && !field.value)) {
+                isValid = false;
+                if (field.type !== 'checkbox') {
+                    field.classList.add('error');
+                } else {
+                    field.nextElementSibling.classList.add('error-text');
                 }
-
-                // Validate
-                if ((field.type === 'checkbox' && !field.checked) || (field.type !== 'checkbox' && !field.value)) {
-                    isValid = false;
-                    if (field.type !== 'checkbox') {
-                        field.classList.add('error');
-                    } else {
-                        field.nextElementSibling.classList.add('error-text');
-                    }
-                }
-            });
-
-            if (isValid) {
-                // IMPORTANT: Replace this with your actual Google Apps Script URL
-                const googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycbxl0NddQa9agu-FF9_nrVZQqf-ITl9MxV_uFMiDbvwxjT-O_LLB3ILtugYvtiY_-mjR/exec';
-
-                // Disable button to prevent multiple submissions
-                submitButton.disabled = true;
-                submitButton.textContent = 'SENDING...';
-
-                // Create a FormData object to send the form data
-                const formData = new FormData(form);
-                const urlEncodedData = new URLSearchParams(formData);
-
-                fetch(googleAppsScriptUrl, {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                  },
-                  body: urlEncodedData.toString()
-                })
-
-                .then(response => response.json()) // Assuming your script returns JSON
-                .then(data => {
-                    console.log('Success:', data);
-                    form.reset(); // Clear all form fields
-                    showToast('Thank you! Your application has been sent.');
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    showToast('An error occurred. Please try again.', true);
-                })
-                .finally(() => {
-                    // Re-enable the button
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'APPLY FOR YOUR BEST RATE';
-                });
-
-            } else {
-                console.log('Form validation failed.');
             }
         });
 
-        function showToast(message, isError = false) {
-            toastMessage.textContent = message;
-            
-            // Change color for errors
-            if(isError) {
-                toast.style.backgroundColor = 'var(--red-error)';
-                toast.style.color = 'var(--white)';
-            } else {
-                toast.style.backgroundColor = 'var(--primary-color)';
-                toast.style.color = 'var(--dark-color)';
-            }
+        if (isValid) {
+            const googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycbxl0NddQa9agu-FF9_nrVZQqf-ITl9MxV_uFMiDbvwxjT-O_LLB3ILtugYvtiY_-mjR/exec';
 
-            toast.classList.add('show');
+            // Disable button and show 'SENDING...'
+            submitButton.disabled = true;
+            submitButton.textContent = 'SENDING...';
 
-            // Hide the toast after 3 seconds
+            // Set a timeout to simulate faster UI response (after 1 second)
             setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+                showToast('Thanks! We’re sending your application...');
+            }, 1000);
+
+            // Prepare form data
+            const formData = new FormData(form);
+            fetch(googleAppsScriptUrl, {
+                method: 'POST',
+                body: formData // ← This is what your contact form uses
+              })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+
+                // Delay clearing the form slightly for smoother UX
+                setTimeout(() => {
+                    form.reset();
+                    showToast('Thank you! Your application has been sent.');
+                }, 1500);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                showToast('An error occurred. Please try again.', true);
+            })
+            .finally(() => {
+                // Re-enable the button after everything finishes
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'APPLY FOR YOUR BEST RATE';
+                }, 1500);
+            });
+
+        } else {
+            console.log('Form validation failed.');
         }
-        
-    </script>
+    });
+
+    function showToast(message, isError = false) {
+        toastMessage.textContent = message;
+
+        if (isError) {
+            toast.style.backgroundColor = 'var(--red-error)';
+            toast.style.color = 'var(--white)';
+        } else {
+            toast.style.backgroundColor = 'var(--primary-color)';
+            toast.style.color = 'var(--dark-color)';
+        }
+
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+</script>
+
           <div class="image-wrapper hero-full-image-section">
             <img
               src="images/index-images/potential-hero5.png"
