@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://londy.com.au/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/contact</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/car-buying</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/car-loans</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/boat-loans</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/caravan-loans</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/equipment-loans</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/ev-hybrid-car-loans</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/loan-calculator</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/personal-loans</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/truck-loans</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/ute-loans</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://londy.com.au/blog</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/used-car-loans</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/loan-with-bad-credit</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/broker-bank-evaluation</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://londy.com.au/disclaimer</loc>
+    <priority>0.1</priority>
+  </url>
+
+</urlset>
