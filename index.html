@@ -855,11 +855,16 @@
 
                 // Create a FormData object to send the form data
                 const formData = new FormData(form);
+                const urlEncodedData = new URLSearchParams(formData);
 
                 fetch(googleAppsScriptUrl, {
-                    method: 'POST',
-                    body: formData,
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                  },
+                  body: urlEncodedData.toString()
                 })
+
                 .then(response => response.json()) // Assuming your script returns JSON
                 .then(data => {
                     console.log('Success:', data);
