@@ -55,6 +55,26 @@
     <priority>0.8</priority>
   </url>
 
+    <!-- Regional Location Pages -->
+  <url>
+    <loc>https://londy.com.au/londy-loans-rockhampton</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/londy-loans-bundaberg</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/londy-loans-mackay</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://londy.com.au/londy-loans-townsville</loc>
+    <priority>0.85</priority>
+  </url>
+
+
+
   <!-- Blog Posts -->
   <url>
     <loc>https://londy.com.au/blog</loc>
